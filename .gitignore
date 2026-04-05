@@ -1,0 +1,37 @@
+# Секреты и локальная среда
+.env
+.env.*
+!.env.example
+
+# Артефакты прогонов (сохраняем только logs/.gitkeep)
+logs/**
+!logs/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Тесты и кеши инструментов
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ОС и редакторы
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/

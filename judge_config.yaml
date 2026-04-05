@@ -1,0 +1,14 @@
+# Судья по умолчанию: модель из XAI_MODEL, URL и ключ из XAI_BASE_URL / XAI_API_KEY.
+# Чтобы сравнить несколько моделей на том же API — добавьте записи с полем model:.
+models:
+  - id: default
+
+approaches:
+  - zero_shot
+  - few_shot
+  - reference_based
+  - hybrid
+
+hybrid:
+  ambiguous_low: 0.35
+  ambiguous_high: 0.65
