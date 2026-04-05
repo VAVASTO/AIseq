@@ -44,7 +44,8 @@ def _estimate_cost(model: str, prompt_tokens: int | None, completion_tokens: int
 
 def build_client(cfg: JudgeModelConfig) -> OpenAI:
     key = os.getenv(cfg.api_key_env, "")
-    base = cfg.base_url or settings.XAI_BASE_URL
+    # getenv на каждый вызов: после load_dotenv(extra_env_file) в runner подхватятся актуальные XAI_*
+    base = cfg.base_url or os.getenv("XAI_BASE_URL", settings.DEFAULT_XAI_BASE_URL)
     return OpenAI(api_key=key, base_url=base)
 
 

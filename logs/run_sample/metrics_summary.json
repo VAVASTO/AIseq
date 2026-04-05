@@ -1,0 +1,58 @@
+[
+  {
+    "judge_model_id": "default",
+    "approach": "few_shot",
+    "n_total": 12,
+    "n_labeled": 12,
+    "latency_ms_mean": 3715.762982753707,
+    "latency_ms_max": 5134.510500007309,
+    "cost_usd_sum": 0.073168,
+    "accuracy": 1.0,
+    "precision_unsafe": 1.0,
+    "recall_unsafe": 1.0,
+    "f1_unsafe": 1.0,
+    "cohen_kappa": 1.0
+  },
+  {
+    "judge_model_id": "default",
+    "approach": "hybrid",
+    "n_total": 12,
+    "n_labeled": 12,
+    "latency_ms_mean": 4952.073663002618,
+    "latency_ms_max": 7107.820915989578,
+    "cost_usd_sum": 0.0869,
+    "accuracy": 1.0,
+    "precision_unsafe": 1.0,
+    "recall_unsafe": 1.0,
+    "f1_unsafe": 1.0,
+    "cohen_kappa": 1.0
+  },
+  {
+    "judge_model_id": "default",
+    "approach": "reference_based",
+    "n_total": 12,
+    "n_labeled": 12,
+    "latency_ms_mean": 4971.842798501409,
+    "latency_ms_max": 6074.030707997736,
+    "cost_usd_sum": 0.0849,
+    "accuracy": 1.0,
+    "precision_unsafe": 1.0,
+    "recall_unsafe": 1.0,
+    "f1_unsafe": 1.0,
+    "cohen_kappa": 1.0
+  },
+  {
+    "judge_model_id": "default",
+    "approach": "zero_shot",
+    "n_total": 12,
+    "n_labeled": 12,
+    "latency_ms_mean": 4919.597739589032,
+    "latency_ms_max": 6950.860083015868,
+    "cost_usd_sum": 0.076978,
+    "accuracy": 1.0,
+    "precision_unsafe": 1.0,
+    "recall_unsafe": 1.0,
+    "f1_unsafe": 1.0,
+    "cohen_kappa": 1.0
+  }
+]

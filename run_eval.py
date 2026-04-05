@@ -24,13 +24,25 @@ def main() -> None:
     p.add_argument("--out", type=Path, required=True, help="Папка для judges_raw.jsonl и run_manifest.json")
     p.add_argument("--dry-run", action="store_true", help="Без API; проверка формата и пайплайна")
     p.add_argument("--limit", type=int, default=0, help="Ограничить число примеров (0 = все)")
+    p.add_argument(
+        "--env-file",
+        type=Path,
+        default=None,
+        help="Дополнительный .env (например ../academiy_test_llm_safety/.env); переопределяет переменные",
+    )
     args = p.parse_args()
 
     examples = load_dataset(args.dataset)
     if args.limit and args.limit > 0:
         examples = examples[: args.limit]
     cfg = load_run_config(args.config)
-    log_path = run_matrix(examples, cfg, args.out, dry_run=args.dry_run)
+    log_path = run_matrix(
+        examples,
+        cfg,
+        args.out,
+        dry_run=args.dry_run,
+        extra_env_file=args.env_file,
+    )
     print(f"Wrote {log_path}")
 
 

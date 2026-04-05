@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -34,8 +35,11 @@ def run_matrix(
     run_cfg: RunConfig,
     out_dir: Path,
     dry_run: bool = False,
+    extra_env_file: Path | None = None,
 ) -> Path:
     load_dotenv()
+    if extra_env_file is not None and extra_env_file.is_file():
+        load_dotenv(extra_env_file, override=True)
     out_dir.mkdir(parents=True, exist_ok=True)
     log_path = out_dir / "judges_raw.jsonl"
     manifest = {
@@ -50,7 +54,7 @@ def run_matrix(
         for ex in examples:
             for mc in run_cfg.models:
                 client = build_client(mc) if not dry_run else None
-                api_model = mc.api_model or settings.XAI_MODEL
+                api_model = mc.api_model or os.getenv("XAI_MODEL", settings.DEFAULT_XAI_MODEL)
                 for approach in run_cfg.approaches:
                     rec = _one_eval(
                         ex,

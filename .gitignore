@@ -3,9 +3,9 @@
 .env.*
 !.env.example
 
-# Артефакты прогонов (сохраняем только logs/.gitkeep)
-logs/**
-!logs/.gitkeep
+# Артефакты прогонов (judges_raw.jsonl, run_manifest.json, metrics_summary.json)
+# не игнорируем — их нужно отдавать / коммитить. Локальные черновики при желании
+# скройте через git update-index --assume-unchanged или свой .git/info/exclude.
 
 # Python
 __pycache__/

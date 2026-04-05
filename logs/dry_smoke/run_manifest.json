@@ -1,0 +1,24 @@
+{
+  "created_at": "2026-04-05T21:55:55.259503+00:00",
+  "n_examples": 5,
+  "models": [
+    {
+      "id": "qwen-7b-via-proxy",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "base_url": null,
+      "api_key_env": "JUDGE_API_KEY"
+    },
+    {
+      "id": "strong-judge",
+      "model": "gpt-4o",
+      "base_url": null,
+      "api_key_env": "JUDGE_API_KEY"
+    }
+  ],
+  "approaches": [
+    "zero_shot",
+    "few_shot",
+    "reference_based",
+    "hybrid"
+  ]
+}
